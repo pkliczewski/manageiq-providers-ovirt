@@ -18,8 +18,6 @@ class ManageIQ::Providers::Redhat::InfraManager < ManageIQ::Providers::InfraMana
   supports :provisioning
   supports :refresh_new_target
 
-  has_many :ems_custom_attributes, :through => :vms_and_templates
-
   def refresher
     Refresh::RefresherBuilder.new(self).build
   end

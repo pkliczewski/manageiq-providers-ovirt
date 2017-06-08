@@ -28,11 +28,6 @@ class ManageIQ::Providers::Redhat::Inventory::Collector < ManagerRefresh::Invent
     @templates      = []
   end
 
-  def hash_collection
-    # TODO: check whether needed
-    ::ManageIQ::Providers::Redhat::Inventory::HashCollection
-  end
-
   def collect_ems_clusters
     manager.with_provider_connection(VERSION_HASH) do |connection|
       connection.system_service.clusters_service.list
